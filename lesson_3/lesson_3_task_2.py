@@ -1,8 +1,8 @@
-from smartphone import smartphone
+from Smartphone import Smartphone
 catalog = []
-phone1 = smartphone("iPhone", "15 Pro Max", "+79134672828")
-phone2 = smartphone("Samsung", "S24 Ultra", "+79234232929")
-phone3 =  smartphone("Redmi", "11 Pro+", "+79143222324")
+phone1 = Smartphone("iPhone", "15 Pro Max", "+79134672828")
+phone2 = Smartphone("Samsung", "S24 Ultra", "+79234232929")
+phone3 =  Smartphone("Redmi", "11 Pro+", "+79143222324")
 
 catalog.append(phone1)
 catalog.append(phone2)
