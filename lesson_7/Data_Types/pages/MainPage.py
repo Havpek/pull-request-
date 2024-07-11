@@ -1,13 +1,13 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from lesson_7.constants import Test_form_URL
+from lesson_7.constants import test_form_URL
 from lesson_7.Data_Types.data import *
 
 class MainPage:
     def __init__(self, browser):
         self.browser = browser
-        self.browser.get(Test_form_URL)
+        self.browser.get(test_form_URL)
     
     def find_fields(self):
         self._first_name = (By.NAME, "first-name")
