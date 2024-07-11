@@ -22,6 +22,7 @@ class MainPage:
         self._company = (By.NAME, "company")
         self._button = (By.TAG_NAME, "button")
     
+    
     def filling_in_the_fields(self):
         self.browser.find_element(*self._first_name).send_keys(first_name)
         self.browser.find_element(*self._last_name).send_keys(last_name)
