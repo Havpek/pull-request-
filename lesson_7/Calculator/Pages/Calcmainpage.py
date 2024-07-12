@@ -7,7 +7,7 @@ from lesson_7.constants import Calculator_URL
 class CalcMain:
     def __init__(self, browser):
         self.browser = browser
-        self.brawser.get(Calculator_URL)
+        self.browser.get(Calculator_URL)
     
 
     def insert_time(self):
