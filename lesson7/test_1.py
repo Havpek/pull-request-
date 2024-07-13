@@ -1,9 +1,8 @@
-from selenium.webdriver.chrome.webdriver import WebDriver
-from lesson_7.Data_Types.Pages.MainPage import MainPage
-from lesson_7.Data_Types.Pages.Datafields import DataFild
+from lesson7.MainPage import MainPage
+from lesson7.Datafields import DataFild
 
 
-def test_assertion(chrome_browser: WebDriver):
+def test_assertion(chrome_browser):
     main_page = MainPage(chrome_browser)
     main_page.find_fields()
     main_page.filling_in_the_fields()

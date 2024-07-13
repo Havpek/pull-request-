@@ -1,5 +1,5 @@
-from lesson_7.Swag_Labs.Pages.Shopcontainer import ShopContainer
-from lesson_7.Swag_Labs.Pages.Shopmain import ShopmainPage
+from lesson7.Shopcontainer import ShopContainer
+from lesson7.Shopmain import ShopmainPage
 
 def test_shop(chrome_browser):
     expected_total = "58.29"
