@@ -1,5 +1,5 @@
-from lesson7.MainPage import MainPage
-from lesson7.Datafields import DataFild
+from MainPage import MainPage
+from Datafields import DataFild
 
 
 def test_assertion(chrome_browser):

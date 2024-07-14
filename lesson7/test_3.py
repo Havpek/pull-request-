@@ -1,5 +1,5 @@
-from lesson7.Shopcontainer import ShopContainer
-from lesson7.Shopmain import ShopmainPage
+from Shopcontainer import ShopContainer
+from Shopmain import ShopmainPage
 
 def test_shop(chrome_browser):
     expected_total = "58.29"
