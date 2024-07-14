@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from lesson7.constants import Shop_URL
+from constants import Shop_URL
 
 class ShopmainPage:
     def __init__(self, browser):
