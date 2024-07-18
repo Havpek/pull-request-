@@ -7,7 +7,7 @@ from constans import X_client_URL
 employer = Employer()
 company = Company()
 
-def test_authorization(get_token):
+def test_authorization(get_token: json):
     token = get_token
     assert token is not None
     assert isinstance(token, str)
@@ -17,7 +17,7 @@ def test_getcompany_id():
     assert company_id is not None
     assert str(company_id).isdigit()
 
-def test_add_employer(get_token):
+def test_add_employer(get_token: json):
     token = str(get_token)
     com_id = company.last_active_company_id()
     body_employer = {
@@ -54,12 +54,12 @@ def test_add_emloyer_without_token():
     new_employer = employer.add_new(token, body_employer)
     assert new_employer['messange'] == 'Unauthorizet'
 
-def test_add_employer_without_body(get_token):
+def test_add_employer_without_body(get_token: json):
     token = str(get_token)
     com_id = company.last_active_company_id()
     body_employer = ()
     new_employer = employer.add_new(token, body_employer)
-    assert new_employer[ 'message'] == 'Internal server error'
+    assert new_employer['message'] == 'Internal server error'
 
 def test_get_employer():
     com_id = company.last_active_company_id()
@@ -87,7 +87,7 @@ def test_get_info_new_employers_missing_employer_id():
         assert str(
             e) == "Employer.get_info() missing 1 required positional argument: 'employee_id'"
 
-def test_chenge_employer_info(get_token):
+def test_chenge_employer_info(get_token: json):
     token = str(get_token)
     com_id = company.last_active_company_id()
     body_employer = {
@@ -114,8 +114,7 @@ def test_chenge_employer_info(get_token):
     employer_changed = employer.change_info(token, id, body_change_employer)
     assert employer_changed.status_code == 200
     assert id == employer_changed.json()['id']
-    assert (employer_changed.json()['email']
-            ) == body_change_employer.get("email")
+    assert (employer_changed.json()['email']) == body_change_employer.get("email")
     
 
 def test_employers_missing_id_token():

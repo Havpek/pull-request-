@@ -24,7 +24,7 @@ class Task:
     
     def change_status (self, id: int, params: json):
         response = requests.patch(self.url + str(id), json=params)
-        status = response. json ()[' completed']
+        status = response. json ()['completed']
         return status
     
     def delete (self, id: int):
