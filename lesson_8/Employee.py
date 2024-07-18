@@ -11,7 +11,7 @@ class Company:
     def create(self, token: str, body: json):
         headers = {"x_client_token": token}
         response = requests.get(
-            self.url + '/company', params=body)
+              self.url + '/company', params=body)
         return response.json()
     
     def last_active_company_id(self):
@@ -21,7 +21,7 @@ class Company:
         return response.json()[-1]['id']
     
 class Employer:
-    def __init__(self, url=X_client_URL) :
+    def __init__(self, url=X_client_URL):
             self.url = url
         
     def get_list(self, company_id: int):

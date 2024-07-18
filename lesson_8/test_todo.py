@@ -7,7 +7,7 @@ def test_todo():
     list = zadacha.get_list()
     assert list.status_code == 200
 
-    params = {"title": "Автоматизация", "completed": 'false'}
+    params = {f"title": "Автоматизация", "completed": 'false'}
     task = zadacha.create (params)
     assert task is not None
     
