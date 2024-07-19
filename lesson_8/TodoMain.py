@@ -11,8 +11,8 @@ class Task:
         return response
     
     def create (self, params: json):
-        response = requests.post (self.url, json=params)
-        return response. json ()['id']
+        response = requests.post(self.url, json=params)
+        return response.json()['id']
     
     def rename (self, id: int, params: json):
         response = requests.patch(self.url + str(id), json=params)
@@ -24,7 +24,7 @@ class Task:
     
     def change_status (self, id: int, params: json):
         response = requests.patch(self.url + str(id), json=params)
-        status = response. json ()['completed']
+        status = response.json()['completed']
         return status
     
     def delete (self, id: int):

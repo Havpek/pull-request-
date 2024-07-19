@@ -26,7 +26,7 @@ class Employer:
         
     def get_list(self, company_id: int):
             company= {'company': company_id}
-            response = requests.get(self.url +' /employee', params=company)
+            response = requests.get(self.url +'/employee', params=company)
             return response.json()
         
     def add_new(self, token: str, body: json):

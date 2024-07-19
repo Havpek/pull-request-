@@ -22,8 +22,8 @@ def test_add_employer(get_token: json):
     com_id = company.last_active_company_id()
     body_employer = {
         'id': 0,
-        'firstname': "Ivan",
-        'lastname': "Petrov",
+        'firstName': "Ivan",
+        'lastName': "Petrov",
         'middleName': "string",
         'companyId': com_id,
         'email': "test@mail.ru",
@@ -41,8 +41,8 @@ def test_add_emloyer_without_token():
     token = ''
     body_employer = {
         'id': 0,
-        'firstname': "Ivan",
-        'lastname': "Petrov",
+        'firstName': "Ivan",
+        'lastName': "Petrov",
         'middleName': "string",
         'companyId': com_id,
         'email': "test@mail.ru",
@@ -52,7 +52,7 @@ def test_add_emloyer_without_token():
         'isActive': "true"
     }
     new_employer = employer.add_new(token, body_employer)
-    assert new_employer['messange'] == 'Unauthorizet'
+    assert new_employer['message'] == 'Unauthorized'
 
 def test_add_employer_without_body(get_token: json):
     token = str(get_token)
@@ -71,14 +71,14 @@ def test_get_list_employers_missing_company_id():
         employer.get_list('')
     except TypeError as e:
         assert str(
-            e) == "Employer.get_ info() missing 1 required positional argument: 'employee_id'"
+            e) == "Employer.get_info() missing 1 required positional argument: 'employee_id'"
 
 def test_get_list_employers_invalid_company_id():
     try:
         employer.get_list('')
     except TypeError as e:
         assert str (
-            e) == "Employer get_list() missing 1 required positional argument: 'company_id'"
+            e) == "Employer.get_list() missing 1 required positional argument: 'company_id'"
 
 def test_get_info_new_employers_missing_employer_id():
     try:
@@ -122,4 +122,4 @@ def test_employers_missing_id_token():
         employer.change_info()
     except TypeError as e:
         assert str(
-            e) == "Employer. change info) missing 3 required positional arguments: 'token', 'employee id', and 'body'"
+            e) == "Employer.change_info) missing 3 required positional arguments: 'token', 'employee id', and 'body'"
